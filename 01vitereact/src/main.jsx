@@ -32,21 +32,29 @@ function MyApp(){
 
 const recatElement = React.createElement(
   'a',
-  {href:'https//google.com'},
-  'Click here to visit to google'
+  {href:'https//google.com', target:'_blank'},
+  'Click here to visit to google..',
 )
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
+  <App/>
   /*
     MyApp()
     <MyApp/>  
     RecatElement ....This is valid format to call object but we are not access here object 
   */
+
   //anotherElement
 
 
-  // Here is the proper formate to comvert a function into JSX
+  /* Here is the proper formate to comvert a function into JSX
+    recatElement
+  */
+
+
+
 )
  
