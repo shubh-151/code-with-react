@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [counter, setCounter] = useState(19)
+const App = ()  => {
+  let [counter, setCounter] = useState(19)
 
-  const addValue = ()=>{
-    counter= counter+1;  
-    setCounter(counter)  
-    console.log(counter)
+  const addValue = () => {
+    counter = counter+1;  
+    setCounter(counter)
   }
 
   const removeValue = ()=>{
-
+    counter = counter-1;
+    setCounter(counter)
   }
 
   return (
