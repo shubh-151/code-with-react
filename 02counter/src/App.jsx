@@ -5,13 +5,26 @@ const App = ()  => {
   let [counter, setCounter] = useState(19)
 
   const addValue = () => {
-    counter = counter+1;  
+
+    if (counter === 20){
+      
+    }
+    else{
+      counter = counter+1;  
     setCounter(counter)
+    }
+    
   }
 
   const removeValue = ()=>{
-    counter = counter-1;
+    if(counter===0){
+
+    }
+    else{
+      counter = counter-1;
     setCounter(counter)
+    }
+    
   }
 
   return (
