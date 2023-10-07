@@ -30,7 +30,7 @@ const App = ()  => {
   return (
     <>
       <h1>Counter project</h1>
-      <h2>Counter value : {counter}</h2>
+      <h2>Count value : {counter}</h2>
       <button onClick={addValue}>Add Value</button>
       <button onClick={removeValue}> Remove Value</button>
     </>
