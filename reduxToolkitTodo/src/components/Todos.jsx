@@ -9,6 +9,7 @@ function Todos() {
 
   return (
     <>
+    <div>hello Readux</div>
     <ul className="list-none">
         {todos.map((todo) => (
           <li

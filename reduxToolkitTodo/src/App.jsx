@@ -9,8 +9,9 @@ function App() {
   return (
     <>
     <h1>Learn about redux tollkit </h1>
+     <AddTodo/>
     <Todos/>
-    <AddTodo/>
+   
     </>
   )
 }
