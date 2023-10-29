@@ -18,4 +18,5 @@ export {
     Signup,
     Login,
     Post,
+    PostForm
 }
