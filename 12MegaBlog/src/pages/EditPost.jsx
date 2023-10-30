@@ -8,7 +8,7 @@ const EditPost = () => {
     const {slug} = useParams()
     const navigate = useNavigate()
 
-    useState(()=>{
+    useEffect(()=>{
         if (slug) {
             appwriteService.getPost(slug).then((post)=>{
                 if (post) {
