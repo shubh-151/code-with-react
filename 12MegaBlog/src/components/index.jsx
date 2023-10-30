@@ -10,7 +10,9 @@ import Post from "../pages/AddPost";
 import PostForm from './post-form/PostForm';
 import PostCard from "./PostCard";
 import Button from './Button'
+import Input from './Input'
 import AuthLayout from './AuthLayout'
+import Select from './Select'
 export {
     Header,
     Footer,
@@ -23,7 +25,9 @@ export {
     Post,
     PostForm,
     PostCard,
-    Button,   
+    Button,
+    Input,   
     AuthLayout,
+    Select,
 }
 
