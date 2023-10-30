@@ -1,11 +1,11 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, Select, RTE } from "../index";
+import { Button, Input, Select, RTE } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const PostForm = ({ post }) => {
+export default function PostForm ({ post }) {
   const { register, handleSubmit, watch, setValue, control, getValues } =
     useForm({
       defaultValues: {
@@ -21,7 +21,7 @@ const PostForm = ({ post }) => {
   const submit = async (data) => {
     if (post) {
       const file = data.image[0]
-        ? appwriteService.uploadFile(data.image[0])
+        ? await appwriteService.uploadFile(data.image[0])
         : null;
       if (file) {
         appwriteService.deleteFile(post.featuredImage);
@@ -52,7 +52,7 @@ const PostForm = ({ post }) => {
     }
   };
 
-  const slugTrasform = useCallback((value) => {
+  const slugTransform = useCallback((value) => {
     if (value && typeof value === "string")
       return value
         .trim()
@@ -65,14 +65,14 @@ const PostForm = ({ post }) => {
   React.useEffect(() => {
     const subscription = watch((value, { name }) => {
       if (name === "title") {
-        setValue("slug", slugTrasform(value.title, { shouldValidate: true }));
+        setValue("slug", slugTransform(value.title, { shouldValidate: true }));
       }
     });
 
     return () => {
       subscription.unsubscribe();
     };
-  }, [watch, slugTrasform, setValue]);
+  }, [watch, slugTransform, setValue]);
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
@@ -136,4 +136,4 @@ const PostForm = ({ post }) => {
   );
 };
 
-export default PostForm;
+
